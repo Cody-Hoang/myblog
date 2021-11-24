@@ -3,10 +3,11 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :is_admin!, except: [:index, :show]
   # GET /posts or /posts.json
-  def index
-    @posts = Post.all.paginate(page: params[:page])
-  end
 
+  def index
+    @posts = Post.all
+  end
+  
   # GET /posts/1 or /posts/1.json
   def show
     @post.views ||= 0
@@ -22,7 +23,7 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
   end
-
+  
   # POST /posts or /posts.json
   def create
     @post = Post.new(post_params)

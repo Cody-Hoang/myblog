@@ -2,7 +2,11 @@
     <% @posts.each do |post| %>
     <div class="row">
         <div class="card mb-3">
+        <% if post.thumbnail.blank? %>
+        <% else %>
             <img class="card-img-top" src="<%= url_for post.thumbnail %>" alt="Ảnh" />
+        <% end %>
+        
             <div class="card-body">
                 <h5 class="card-title">
                     <%= link_to post.title, post %>
@@ -14,9 +18,8 @@
                     <small class="text-muted">
                     Cập nhật
                         <%= post.updated_at.strftime("%A, %B %e, %Y") %> bởi
-                        <%= post.user.email %> | <%= post.views %> lượt xem | 0 comments
+                        <%= post.user.email %> | <%= post.views %> lượt xem | 0 bình luận
                         <% if current_user %>
-                          
                           <% if current_user.admin %>
                                   <%= link_to 'Sửa', edit_post_path(post) %>
                                   <%= link_to 'Xóa', post, method: :delete, data: { confirm: 'Bạn có chác muốn xóa ?' } %>
