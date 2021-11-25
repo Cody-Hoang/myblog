@@ -22,13 +22,15 @@
                 </button>
 
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
-                    <li><a class="dropdown-item" href=" <%= edit_user_registration_path %>" >Tài khoản </a> </li>
-                    
+                    <li><button class="dropdown-item" type="button"><a class="dropdown-item" href=" <%= edit_user_registration_path %>"> Tài khoản </a></button></li>
                     <% if current_user.admin %>
-                    <li><button class="dropdown-item" type="button"><a> Bài viết mới </a></button></li>
+                    <li><button class="dropdown-item" type="button"><a class="dropdown-item" href=" <%= new_post_path %>"> Bài viết mới </a></button></li>
                     <% end %>
                     <li>
-                     <%= link_to "Đăng xuất", destroy_user_session_path, class:'dropdown-item', method: :delete %>
+                    <button class="dropdown-item">
+
+                     <%= link_to "Đăng xuất", destroy_user_session_path,class:'dropdown-item', method: :delete %>
+                    </button>
                     </li>
                 </ul>
          <% else %>

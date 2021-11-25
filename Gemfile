@@ -23,9 +23,12 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+# cac gem su dung them
+gem 'image_processing', '~> 1.2'
 gem 'devise'
 gem 'simple_form'
+gem 'will_paginate'
+#end
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 

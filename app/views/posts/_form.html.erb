@@ -1,0 +1,31 @@
+
+<%= form_with model: post do |f| %>
+  
+  <div class="form-inputs">
+    <%= f.text_field :title, class:'form-control string' %>
+        <% @post.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+      
+    <%= f.label "Ảnh thu nhỏ", class:'form-control' %>
+    <%= f.file_field :thumbnail %>
+            <% @post.errors.full_messages_for(:thumbnail).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+    <%= f.label :banner, class:'form-control' %>
+    <%= f.file_field :banner %>
+                <% @post.errors.full_messages_for(:banner).each do |message| %>
+      <div><%= message %></div>
+      
+      <% end %>
+      
+    <%= f.rich_text_area :body %>
+        <% @post.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit , class:'btn-primary' %>
+  </div>
+<% end %>
