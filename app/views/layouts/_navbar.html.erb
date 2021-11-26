@@ -14,14 +14,13 @@
           <a class="nav-link" href="<%=  about_path  %>">Chúng tôi</a>
         </li>
       </ul>
-      <ul class="navbar-nav ">
+      <ul class="navbar-nav ml-auto">
          <% if current_user %>
             <div class="btn-group">
                 <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                     <%= current_user.email %>
                 </button>
-
-                <%# <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start"> %>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
                     <li><button class="dropdown-item" type="button"><a class="dropdown-item" href=" <%= edit_user_registration_path %>"> Tài khoản </a></button></li>
                     <% if current_user.admin %>
                     <li><button class="dropdown-item" type="button"><a class="dropdown-item" href=" <%= new_post_path %>"> Bài viết mới </a></button></li>
@@ -31,7 +30,7 @@
                      <%= link_to "Đăng xuất", destroy_user_session_path,class:'dropdown-item', method: :delete %>
                     </button>
                     </li>
-                <%# </ul> %>
+                </ul>
          <% else %>
                     <li>
                     <%= link_to "Đăng ký", new_user_registration_path, class:'dropdown-item' %>
