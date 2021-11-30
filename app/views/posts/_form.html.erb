@@ -7,7 +7,7 @@
       <div><%= message %></div>
       <% end %>
       
-    <%= f.label "Ảnh thu nhỏ", class:'form-control' %>
+    <%= f.label "Ảnh trang chủ", class:'form-control' %>
     <%= f.file_field :thumbnail %>
             <% @post.errors.full_messages_for(:thumbnail).each do |message| %>
       <div><%= message %></div>
